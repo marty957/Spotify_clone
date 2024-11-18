@@ -1,4 +1,32 @@
 .gradient {
   background: rgb(0, 0, 0);
-  background: linear-gradient(3deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 16%, rgba(62, 62, 62, 1) 100%);
+  background: linear-gradient(15deg, rgba(0, 0, 0, 1) 31%, rgba(25, 24, 24, 1) 59%, rgba(64, 63, 63, 1) 100%, rgba(255, 255, 255, 1) 100%);
+}
+
+body {
+  font-family: "Circular";
+}
+
+.bg-main-section {
+  background-color: #121212;
+}
+
+.bg-arrows {
+  background-color: #1a1a1a;
+}
+
+.bg-main-cards {
+  background-color: #2d2d2d;
+}
+
+.bg-secondary-cards {
+  background-color: #171717;
+}
+
+.spotify {
+  background-color: #1bd760;
+}
+
+.font-off {
+  color: #929292;
 }
