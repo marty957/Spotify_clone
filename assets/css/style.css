@@ -30,3 +30,7 @@ body {
 .font-off {
   color: #929292;
 }
+
+.trasparent {
+  background-color: transparent;
+}
