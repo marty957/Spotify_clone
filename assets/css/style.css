@@ -34,3 +34,7 @@ body {
 .trasparent {
   background-color: transparent;
 }
+.gradient2 {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
+}
