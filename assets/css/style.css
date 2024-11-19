@@ -7,6 +7,11 @@ body {
   font-family: "Circular";
 }
 
+h1 {
+  letter-spacing: -4px;
+  font-size: 6rem;
+}
+
 .bg-main-section {
   background-color: #121212;
 }
@@ -28,7 +33,60 @@ body {
 }
 
 .font-off {
-  color: #929292;
+  color: #deddddb4;
+}
+#bannerArtist {
+  background-image: url(../imgs/ourImg/Nuovo\ progetto.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
+}
+.fs-8 {
+  font-size: 0.5rem;
+}
+
+#playBtn {
+  width: 60px;
+  height: 60px;
+}
+
+#playContainer button {
+  letter-spacing: 1px;
+}
+
+#followBtn {
+  color: white;
+}
+
+#followBtn:hover {
+  color: black;
+  background-color: white;
+  border-color: black;
+  box-shadow: 1px 5px 5px rgb(255, 255, 255), 1px 5px 5px rgb(255, 255, 255);
+}
+#showMore {
+  letter-spacing: 1px;
+}
+
+.containerPhotoSong {
+  width: 43px;
+  height: 43px;
+}
+
+#singleSong:hover {
+  background-color: #2a2a2a;
+}
+
+#imgLike {
+  width: 80px;
+  height: 80px;
+}
+
+footer li a:hover {
+  color: #1db954;
 }
 
 .trasparent {
