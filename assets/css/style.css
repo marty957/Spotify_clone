@@ -96,3 +96,233 @@ footer li a:hover {
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
 }
+
+.main-content {
+  padding-bottom: 60px;
+}
+.gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(15deg, rgba(0, 0, 0, 1) 31%, rgba(25, 24, 24, 1) 59%, rgba(64, 63, 63, 1) 100%, rgba(255, 255, 255, 1) 100%);
+}
+
+body {
+  font-family: "Circular";
+}
+
+.bg-main-section {
+  background-color: #121212;
+}
+
+.bg-arrows {
+  background-color: #1a1a1a;
+}
+
+.bg-main-cards {
+  background-color: #2d2d2d;
+}
+
+.bg-secondary-cards {
+  background-color: #171717;
+}
+
+.spotify {
+  background-color: #1bd760;
+}
+
+.font-off {
+  color: #929292;
+}
+
+.trasparent {
+  background-color: transparent;
+}
+.gradient2 {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* General styles for the player */
+#player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181818; /* Background color */
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Left section of the player */
+.player-left {
+  display: flex;
+  align-items: center;
+}
+
+.album-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-title {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.track-artist {
+  font-size: 12px;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+/* Center section of the player */
+.player-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centering the elements */
+  flex-grow: 1;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px; /* Space between controls and progress bar */
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 400px; /* Width of the progress bar */
+}
+
+.current-time,
+.total-time {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #404040;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Right section of the player */
+.player-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.volume-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 4px;
+  background: #404040;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-bar::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.play-btn {
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 60px 70px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-btn:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+.play-btn:active {
+  background-color: #1aa34a;
+  transform: scale(0.95);
+}
+
+img.object-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
