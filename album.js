@@ -86,12 +86,13 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
       const track = document.createElement("div");
       track.classList.add("row", "mt-3");
       track.setAttribute("id", "track");
+
       track.innerHTML = `<div class="col-7">
                       <div class="d-flex">
                         <span class="h-100 font-off">${index + 1}</span>
                         <div class="d-inline-block font-off ms-2">
                           <h4 class="fs-6 m-0">${element.title}</h4>
-                          <p>${element.artist.name}</p>
+                          <p class="m-0">${element.artist.name}</p>
                         </div>
                       </div>
                     </div>
