@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify | Albumpage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-3 col-lg-3 col-xxl-3 bg-black ps-4 pt-3" id="aside-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="text-white bi bi-three-dots" viewBox="0 0 16 16">
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+            </svg>
+            <div class="my-2">
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="text-white bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Home</span>
+                </a>
+              </div>
+
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="text-white bi bi-search" viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Cerca</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-collection-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">La tua libreria</span>
+                </a>
+              </div>
+            </div>
+            <div class="my-5 pb-3 border-bottom border-secondary">
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-plus-square" viewBox="0 0 16 16">
+                    <path
+                      d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                    />
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Crea Playlist</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#442BA6" class="bi bi-box2-heart-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1zM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Brani che ti piacciono</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="green" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                    <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">I tuoi episodi</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 col-xxl-7 bg-main-section px-0" id="main-section">
+            <div class="container-fliud gradient2">
+              <div class="d-flex justify-content-between px-4 pt-2 mb-3 align-items-center d-none d-sm-flex">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="27"
+                    height="27"
+                    fill="gray"
+                    class="btn rounded-circle p-1 bg-arrows bi bi-chevron-left me-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="27"
+                    height="27"
+                    fill="gray"
+                    class="btn rounded-circle p-1 bg-arrows bi bi-chevron-right me-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                    />
+                  </svg>
+                </div>
+                <div class="dropdown d-none d-sm-block">
+                  <a
+                    class="btn bg-arrows dropdown-toggle text-white rounded-pill p-0 pe-1 fs-6"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    ><img
+                      src="https://cdn.pixabay.com/photo/2024/03/03/12/08/woman-8610292_1280.jpg"
+                      alt=""
+                      width="30px"
+                      height="30px"
+                      class="rounded-circle me-2"
+                      style="vertical-align: middle"
+                    />Martina Fantuzzi</a
+                  >
+
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-none d-sm-block">
+                <div class="card mb-3 rounded-0 border-0 text-white w-100 trasparent">
+                  <div class="row g-0 justify-content-between">
+                    <div class="col-3 p-2">
+                      <img src="./assets/imgs/main/image-1.jpg" class="img-fluid my-3 mx-2" alt="" />
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-body">
+                        <div class="mb-2 d-flex justify-content-between">
+                          <p class="fs-7">ALBUM</p>
+                          <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold">NASCONDI ANNUNCI</button>
+                        </div>
+                        <h2 class="card-title display-4 fw-bold">VIOLA (feat. Salmo)</h2>
+                        <p class="card-text lead fs-6"><small class="text-white">Ascolta il nuovo singolo di Fedez e Salmo!</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fliud px-4 bg-dark pt-3" style="--bs-bg-opacity: 0.25">
+                <div class="mb-4">
+                  <a href="#" class="btn spotify rounded-circle me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                      <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                    </svg>
+                  </a>
+                  <a href="#" class="me-3 text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="#929292" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                      />
+                    </svg>
+                  </a>
+                  <a href="#" class="me-3 text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#929292" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#929292" class="text-white bi bi-three-dots" viewBox="0 0 16 16">
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                    </svg>
+                  </a>
+                </div>
+                <div class="container">
+                  <div class="row border-bottom my-0 border-light pt-2" style="--bs-border-opacity: 0.25">
+                    <div class="col-7">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#929292" class="bi bi-hash" viewBox="0 0 16 16">
+                        <path
+                          d="M8.39 12.648a1 1 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1 1 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.51.51 0 0 0-.523-.516.54.54 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532s.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531s.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z"
+                        />
+                      </svg>
+                      <span class="font-off">TITOLO</span>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">RIPRODUZIONI</p>
+                    </div>
+                    <div class="col-1 offset-1 p-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#929292" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="d-flex">
+                        <span class="h-100 font-off">1</span>
+                        <div class="d-inline-block font-off ms-2">
+                          <h4 class="fs-6 m-0">Monatnelli-Intro</h4>
+                          <p>Pinguine Tattici Nucleari</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <p class="font-off text-center">694.578</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="font-off text-center">1:28</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3 col-lg-3 col-xxl-2 bg-black px-4 pt-3 d-none d-md-block" id="aside-right">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <p class="text-white m-0 fs-5">Attività amici</p>
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-person-fill-add ms-3" viewBox="0 0 16 16">
+                  <path
+                    d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"
+                  />
+                  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-x-lg ms-3" viewBox="0 0 16 16">
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 p-0 mb-4 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-10.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">Charlie Hookham</p>
+                            <p class="card-text font-off fs-7 p-0">4 ore</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">In Camera • Yumi Zouma</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-vinyl-fill"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0" />
+                            </svg>
+                            EP III
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 p-0 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-10.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">lightdark02</p>
+                            <p class="card-text font-off fs-7 p-0">8 ore</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">Aimed to Kill • Jade LeMac</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-vinyl-fill"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0" />
+                            </svg>
+                            EP III
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 p-0 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-10.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">Valeria Traverso</p>
+                            <p class="card-text font-off fs-7 p-0">3 giorni</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">New Kings • Sleeping Wolf</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-music-note-beamed"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path
+                                d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"
+                              />
+                              <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z" />
+                              <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z" />
+                            </svg>
+                            EP III
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+<script src="album.js"></script>
+  </body>
+</html>
