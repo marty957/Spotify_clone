@@ -13,7 +13,7 @@ let isCreateBuonasera = 0; // Flag to check if "Buonasera" section is created
 let isCreateAltro = 0; // Flag to check if "Altro" section is created
 
 // Array of genres
-const genres = [/* "pop", */ "rock", "jazz","hiphop", "classic", "trans"];
+const genres = [/* "pop", */ "rock", "jazz", "hiphop", "classic", "trans"];
 let albums = []; // Array to store album data
 let currentAlbumIndex = 0; // Index for currently displayed album
 
@@ -87,7 +87,7 @@ const displayAlbum = () => {
             <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold" id="toggle-content"> NASCONDI ANNUNCI</button>
           </div>
           <div id="album-content">
-            <a class="text-decoration-none text-white" href="./album.html"><h2 class="card-title display-4 fw-bold text-truncate">${album.album.title}</h2></a>
+            <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><h2 class="card-title display-4 fw-bold text-truncate">${album.album.title}</h2></a>
             <a class="text-decoration-none text-white" href="./artist.html"><p class="card-text lead fs-6"> ${album.artist.name}</p></a>
             <p class="card-text lead fs-6">
               <small class="text-white">Listen to the new single by ${album.artist.name}.</small>
