@@ -53,6 +53,10 @@ h1 {
   height: 60px;
 }
 
+#playBtn:hover {
+  box-shadow: 1px 1px 20px #1bd760;
+}
+
 #playContainer button {
   letter-spacing: 1px;
 }
@@ -65,7 +69,7 @@ h1 {
   color: black;
   background-color: white;
   border-color: black;
-  box-shadow: 1px 5px 5px rgb(255, 255, 255), 1px 5px 5px rgb(255, 255, 255);
+  box-shadow: 1px 1px 20px white;
 }
 #showMore {
   letter-spacing: 1px;
