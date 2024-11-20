@@ -143,9 +143,9 @@
               </div>
               <div class="d-none d-sm-block">
                 <div class="card mb-3 rounded-0 border-0 text-white w-100 trasparent">
-                  <div class="row g-0 justify-content-between">
+                  <div class="row g-0 justify-content-between" id="album_container">
                     <div class="col-3 p-2">
-                      <img src="./assets/imgs/main/image-1.jpg" class="img-fluid my-3 mx-2" alt="" />
+                      <img src="./assets/imgs/main/image-1.jpg" class="img-fluid my-3 mx-2" alt="" id="albumImage" />
                     </div>
                     <div class="col-md-9">
                       <div class="card-body">
@@ -153,8 +153,14 @@
                           <p class="fs-7">ALBUM</p>
                           <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold">NASCONDI ANNUNCI</button>
                         </div>
-                        <h2 class="card-title display-4 fw-bold">VIOLA (feat. Salmo)</h2>
-                        <p class="card-text lead fs-6"><small class="text-white">Ascolta il nuovo singolo di Fedez e Salmo!</small></p>
+                        <h2 class="card-title display-4 fw-bold" id="albumTitle">VIOLA (feat. Salmo)</h2>
+                        <div class="d-flex align-items-center">
+                          <img class="rounded-circle mx-2" src="" alt="" id="smallImage" />
+                          <p class="card-text lead fs-6">
+                            <small id="artistName" class="text-white"></small> <small id="year"></small> <small id="numberOfSongs"></small>
+                            <small id="totalTime"></small>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -163,7 +169,7 @@
 
               <div class="container-fliud px-4 bg-dark pt-3" style="--bs-bg-opacity: 0.25">
                 <div class="mb-4">
-                  <a href="#" class="btn spotify rounded-circle me-3">
+                  <a id="playPauseBtn" href="#" class="btn spotify rounded-circle me-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
                     </svg>
@@ -189,7 +195,7 @@
                     </svg>
                   </a>
                 </div>
-                <div class="container">
+                <div id="tracksContainer" class="container">
                   <div class="row border-bottom my-0 border-light pt-2" style="--bs-border-opacity: 0.25">
                     <div class="col-7">
                       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#929292" class="bi bi-hash" viewBox="0 0 16 16">
@@ -209,7 +215,7 @@
                       </svg>
                     </div>
                   </div>
-                  <div class="row mt-3">
+                  <!--<div class="row mt-3" id="track">
                     <div class="col-7">
                       <div class="d-flex">
                         <span class="h-100 font-off">1</span>
@@ -344,7 +350,7 @@
                     <div class="col-2">
                       <p class="font-off text-center">1:28</p>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
               </div>
             </div>
@@ -481,6 +487,10 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+<<<<<<< HEAD
 <script src="album.js"></script>
+=======
+    <script src="./album.js"></script>
+>>>>>>> dcdb7d92df5dc03c4da6bc804b201bb5c34103b8
   </body>
 </html>
