@@ -13,6 +13,7 @@ function convertSeconds(seconds) {
 let audioElements = [];
 let currentAudio = null;
 let currentTracksIndex = 0;
+let currentPlay = null;
 let isPlaying = false;
 
 const playPauseBtn = document.getElementById("playPauseBtn");
@@ -20,6 +21,7 @@ const playPauseBtn = document.getElementById("playPauseBtn");
 function setupAudioElements(tracks) {
   tracks.forEach((track) => {
     const audio = new Audio(track.preview);
+
     audioElements.push(audio);
   });
 }
@@ -104,18 +106,29 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
                       <p class="font-off text-center">${convertSeconds(element.duration).minutes}:${convertSeconds(element.duration).remainingSeconds}</p>
                     </div>`;
 
-      console.log(track.preview);
       track.addEventListener("click", () => {
+        if (currentAudio && currentPlay === index) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio = null;
+          currentPlay = null;
+          console.log(`Stopped: ${track.title}`);
+          return;
+        }
+
         if (currentAudio) {
           currentAudio.pause();
           currentAudio.currentTime = 0;
         }
-        const audio = new Audio(element.preview);
 
+        const audio = new Audio(element.preview);
         audio.play();
         currentAudio = audio;
+        currentPlay = index;
+        console.log(`Playing: ${element.title}`);
       });
       tracksContainer.appendChild(track);
       setupAudioElements(albumData.tracks.data);
     });
-  });
+  })
+  .catch((error) => console.log(error));
