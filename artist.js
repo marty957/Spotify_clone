@@ -1,5 +1,5 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/412";
-const urlTracks = "https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=50";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/6301";
+const urlTracks = "https://striveschool-api.herokuapp.com/api/deezer/artist/6301/top?limit=50";
 
 function convertSeconds(seconds) {
   const minutes = Math.floor(seconds / 60);
