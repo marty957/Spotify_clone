@@ -138,15 +138,15 @@ const displayAlbum = () => {
   if (isCreateBuonasera === 0) {
     for (let i = 1; i < 7; i++) {
       const buonaseraCard = document.createElement("div");
-      buonaseraCard.classList.add("col-4", "g-0");
-      buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards me-3 mb-3">
+      buonaseraCard.classList.add("col-4");
+      buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards  mb-3  ">
                       <div class="row g-0">
                         <div class="col-3">
                           <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><img src="${albums[i].album.cover_medium}" class="img-fluid rounded-start object-fit-cover" alt="" /></a>
                         </div>
                         <div class="col-9">
                           <div class="card-body">
-                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 mt-3 text-truncate">${albums[i].album.title}</p></a>
+                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6  text-truncate">${albums[i].album.title}</p></a>
                             <p class="card-text lead fs-6">
                              <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white">${albums[i].artist.name}.</small></a>
                             </p>
@@ -161,16 +161,20 @@ const displayAlbum = () => {
 
   // Populate the "Altro" section
   if (isCreateAltro === 0) {
-    for (let i = 7; i < 12; i++) {
+    for (let i = 7; i < 11; i++) {
       const altroCard = document.createElement("div");
-      altroCard.classList.add("card", "rounded-1", "me-3", "bg-secondary-cards", "text-white", "border-0");
-      altroCard.innerHTML = `<div class="p-3">
-                     <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="object-fit-cover rounded img-fluid" alt="..." /></a>
-                    </div>
-                    <div class="card-body">
-                      <p class="card-title fw-bold text-truncate ">${albums[i].album.title}</p>
-                     <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><p class="card-text font-off">${albums[i].artist.name}.</p></a>
-                    </div>`;
+      altroCard.classList.add("col-3");
+      altroCard.innerHTML = `<div class="card rounded-1  bg-secondary-cards text-white border-0 " id="cardAltro">
+      <div id="containerAltroImg">
+      <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="p-3 card-img-top object-fit-cover rounded img-fluid" alt="..." /></a>
+      
+      </div>
+      
+      <div class="card-body">
+      <p class="card-title fw-bold text-truncate ">${albums[i].album.title}</p>
+      <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><p class="card-text font-off text-truncate">${albums[i].artist.name}.</p></a>
+      </div>
+      </div>`;
       altro.appendChild(altroCard);
     }
     isCreateAltro = 1; // Mark as created

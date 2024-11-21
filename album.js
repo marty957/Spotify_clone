@@ -18,7 +18,7 @@ let currentTracksIndex = 0;
 let currentPlay = null;
 let isPlaying = false;
 
-const playPauseBtn = document.getElementById("playPauseBtn");
+const playPauseBtn = document.getElementById("playBtn");
 
 function setupAudioElements(tracks) {
   tracks.forEach((track) => {
