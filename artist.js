@@ -1,13 +1,61 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/412";
-const urlTracks = "https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=50";
-
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const urlTracks = "https://striveschool-api.herokuapp.com/api/deezer/artist//top?limit=50";
+const urlParams = new URLSearchParams(window.location.search);
+const artistId = urlParams.get("artistId");
 function convertSeconds(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
   return { minutes, remainingSeconds };
 }
 
-fetch(url)
+let audioElements = [];
+let currentAudio = null;
+let currentTracksIndex = 0;
+let currentPlay = null;
+let isPlaying = false;
+
+const playPauseBtn = document.getElementById("playBtn");
+
+function setupAudioElements(tracks) {
+  tracks.forEach((track) => {
+    const audio = new Audio(track.preview);
+
+    audioElements.push(audio);
+  });
+}
+
+function playTracks() {
+  if (currentTracksIndex >= audioElements.length) {
+    currentTracksIndex = 0;
+  }
+
+  audioElements[currentTracksIndex].play();
+  audioElements[currentTracksIndex].addEventListener("ended", () => {
+    currentTracksIndex++;
+    playTracks();
+  });
+}
+
+function stopTracks() {
+  audioElements.forEach((audio) => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+
+playPauseBtn.addEventListener("click", () => {
+  if (!isPlaying) {
+    playPauseBtn.textContent = "Pause";
+    playTracks();
+    isPlaying = true;
+  } else {
+    playPauseBtn.textContent = "Play";
+    stopTracks();
+    isPlaying = false;
+  }
+});
+
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
   .then((response) => {
     if (response.ok) {
       console.log(response);
@@ -37,7 +85,7 @@ fetch(url)
   .catch((err) => console.log(err));
 console.log("ciao");
 
-fetch(urlTracks)
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=50`)
   .then((response) => {
     if (response.ok) {
       console.log(response);
@@ -51,12 +99,13 @@ fetch(urlTracks)
       tracks.classList.add("row", "justify-content-start", "align-items-center", "mb-3", "rounded", "py-1");
       tracks.setAttribute("id", "singleSong");
       tracks.innerHTML = `<div class="col-7 d-flex justify-content-start align-items-center">
+
                                   <p id="numberSong" class="font-off m-0 fw-light fs-listeners">${index + 1}</p>
                                   <div class="containerPhotoSong mx-3">
-                                    <img src="${element.album.cover_small}
-                                    " alt="" id="photoSong" class="img-fluid" />
+                                    <img src="${element.album.cover_medium}
+                                    " alt="" id="photoSong" class=" w-100"/>
                                   </div>
-                                  <p id="nameSong" class="text-white m-0 fs-single-song">${element.title_short}</p>
+                                  <p id="nameSong" class="text-white m-0 fs-single-song text-truncate">${element.title_short}</p>
                                 </div>
                                 <div class="col-3">
                                   <p id="listeners" class="font-off m-0 fw-light fs-listeners">${element.rank}</p>
@@ -66,9 +115,41 @@ fetch(urlTracks)
         convertSeconds(element.duration).remainingSeconds
       }</p>
                                 </div>`;
+      tracks.addEventListener("click", () => {
+        if (currentAudio && currentPlay === index) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio = null;
+          currentPlay = null;
+          console.log(`Stopped: ${tracks.title}`);
+          return;
+        }
 
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+
+        const audio = new Audio(element.preview);
+        audio.play();
+        currentAudio = audio;
+        currentPlay = index;
+        console.log(`Playing: ${element.title}`);
+      });
       containerTracks.appendChild(tracks);
+      setupAudioElements(tracksdata.data);
     });
   })
 
   .catch((err) => console.log(err));
+
+const back = document.getElementById("back");
+const forward = document.getElementById("forward");
+
+back.addEventListener("click", () => {
+  window.history.back();
+});
+
+forward.addEventListener("click", () => {
+  window.history.forward();
+});
