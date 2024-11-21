@@ -102,23 +102,25 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     albumData.tracks.data.forEach((element, index) => {
       const tracksContainer = document.getElementById("tracksContainer");
       const track = document.createElement("div");
-      track.classList.add("row", "mt-3");
+      track.classList.add("row", "mt-3", "justify-content-start", "align-items-center", "py-1", "rounded");
       track.setAttribute("id", "track");
 
-      track.innerHTML = `<div class="col-7">
-                      <div class="d-flex">
-                        <span class="h-100 font-off">${index + 1}</span>
-                        <div class="d-inline-block font-off ms-2">
-                          <h4 class="fs-6 m-0">${element.title}</h4>
-                          <p class="m-0">${element.artist.name}</p>
+      track.innerHTML = `<div class="col-7 d-flex justify-content-start align-items-center">
+                     
+                        <p class="m-0 font-off fs-listeners">${index + 1}</p>
+                        <div class="d-inline-block font-off  ms-3">
+                          <p class="fs-6 m-0 text-white ">${element.title}</p>
+                          <p class="m-0 fs-7">${element.artist.name}</p>
                         </div>
                       </div>
-                    </div>
+                    
                     <div class="col-3">
-                      <p class="font-off text-center">${element.rank}</p>
+                      <p class="font-off text-center m-0 fs-listeners">${element.rank}</p>
                     </div>
                     <div class="col-2">
-                      <p class="font-off text-center">${convertSeconds(element.duration).minutes}:${convertSeconds(element.duration).remainingSeconds}</p>
+                      <p class="font-off text-center m-0 fs-listeners">${convertSeconds(element.duration).minutes}:${
+        convertSeconds(element.duration).remainingSeconds
+      }</p>
                     </div>`;
 
       track.addEventListener("click", () => {

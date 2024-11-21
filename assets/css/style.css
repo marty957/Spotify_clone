@@ -48,6 +48,10 @@ h1 {
   font-size: 0.5rem;
 }
 
+.fs-listeners {
+  font-size: 0.75rem;
+}
+
 #playBtn {
   width: 30px;
   height: 30px;
