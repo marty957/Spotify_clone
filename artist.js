@@ -97,6 +97,8 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?
     }
   })
   .then((tracksdata) => {
+    const tracks=tracksdata.data;
+    setupAudioElements(tracksdata.data);
     tracksdata.data.forEach((element, index) => {
       const containerTracks = document.getElementById("containerTracks");
       const tracks = document.createElement("div");
@@ -141,7 +143,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?
         console.log(`Playing: ${element.title}`);
       });
       containerTracks.appendChild(tracks);
-      setupAudioElements(tracksdata.data);
+      
     });
   })
 
