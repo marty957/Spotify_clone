@@ -1,3 +1,5 @@
+//import Vibrant from "node-vibrant";
+
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -11,7 +13,9 @@ function convertSeconds(seconds) {
   return { minutes, remainingSeconds };
 }
 let audioElements = [];
+let currentAudio = null;
 let currentTracksIndex = 0;
+let currentPlay = null;
 let isPlaying = false;
 
 const playPauseBtn = document.getElementById("playPauseBtn");
@@ -19,6 +23,7 @@ const playPauseBtn = document.getElementById("playPauseBtn");
 function setupAudioElements(tracks) {
   tracks.forEach((track) => {
     const audio = new Audio(track.preview);
+
     audioElements.push(audio);
   });
 }
@@ -74,6 +79,19 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     const totalTime = document.getElementById("totalTime");
 
     albumImage.src = albumData.cover_big;
+
+    /*const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    albumImage.crossOrigin = "anonymous";
+    albumImage.src = proxyUrl + albumData.cover_big;
+
+    albumImage.onload = () => {
+      const vibrant = new Vibrant(albumImage);
+      vibrant.getPalette().then((palette) => {
+        const dominantColor = palette.Vibrant.getHex();
+        console.log("Dominant Color:", dominantColor);
+        albumContainer.style.backgroundColor = dominantColor;
+      });
+    };*/
     albumTitle.textContent = albumData.title;
     artistName.textContent = albumData.artist.name;
     smallImage.src = albumData.cover_small;
@@ -102,7 +120,41 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
                     <div class="col-2">
                       <p class="font-off text-center">${convertSeconds(element.duration).minutes}:${convertSeconds(element.duration).remainingSeconds}</p>
                     </div>`;
+
+      track.addEventListener("click", () => {
+        if (currentAudio && currentPlay === index) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio = null;
+          currentPlay = null;
+          console.log(`Stopped: ${track.title}`);
+          return;
+        }
+
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+
+        const audio = new Audio(element.preview);
+        audio.play();
+        currentAudio = audio;
+        currentPlay = index;
+        console.log(`Playing: ${element.title}`);
+      });
       tracksContainer.appendChild(track);
       setupAudioElements(albumData.tracks.data);
     });
-  });
+  })
+  .catch((error) => console.log(error));
+
+const back = document.getElementById("back");
+const forward = document.getElementById("forward");
+
+back.addEventListener("click", () => {
+  window.history.back();
+});
+
+forward.addEventListener("click", () => {
+  window.history.forward();
+});
