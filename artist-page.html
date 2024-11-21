@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify | Homepage</title>
+    <title>Spotify | ArtistPage</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,7 +17,7 @@
     <main>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 col-md-3 col-lg-3 col-xxl-3 bg-black ps-4 pt-3" id="aside-left">
+          <div class="col-lg-3 col-xxl-3 bg-black ps-4 pt-3 d-lg-block d-none" id="aside-left">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="text-white bi bi-three-dots" viewBox="0 0 16 16">
               <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
             </svg>
@@ -86,11 +86,11 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-6 col-xxl-7 bg-main-section p-0" id="main-section">
+          <div class="col-12 col-lg-9 col-xxl-7 bg-main-section p-0" id="main-section">
             <div id="bannerArtist">
-              <div class="container mb-5 px-4">
-                <div class="d-flex justify-content-between py-3 align-items-center d-none d-sm-flex">
-                  <div>
+              <div class="container-fluid m-0 px-4">
+                <div class="d-none justify-content-end justify-content-lg-between py-3 align-items-center d-sm-flex">
+                  <div class="d-none d-lg-flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="27"
@@ -118,7 +118,7 @@
                       />
                     </svg>
                   </div>
-                  <div class="dropdown d-none d-sm-block">
+                  <div class="dropdown">
                     <a
                       class="btn bg-arrows dropdown-toggle text-white rounded-pill p-0 pe-1 fs-6"
                       href="#"
@@ -143,7 +143,7 @@
                   </div>
                 </div>
               </div>
-              <div class="bannerText px-4 mt-5 pt-5">
+              <div class="bannerText px-4 mt-0 mt-sm-5 pt-5">
                 <div class="d-flex justify-content-start align-items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#3D91F4" class="bi bi-patch-check-fill me-1" viewBox="0 0 16 16">
                     <path
@@ -152,14 +152,14 @@
                   </svg>
                   <p class="text-white fs-6 m-0 fw-bold">Artista Verificato</p>
                 </div>
-                <h1 class="text-white fw-bold m-0 my-1 mb-4">Yellowcard</h1>
-                <p class="fs-6 text-white pb-4">3.433.158 ascoltatori mensili</p>
+                <h1 id="nameArtist" class="text-white fw-bold m-0 my-1 mb-4">Yellowcard</h1>
+                <p id="nbFans" class="fs-6 text-white pb-4">3.433.158 ascoltatori mensili</p>
               </div>
             </div>
             <section class="px-4">
               <div class="d-flex justify-content-start align-items-center mt-4" id="playContainer">
                 <button type="button" class="spotify border-0 rounded-circle me-4" id="playBtn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="black" class="bi bi-play-fill" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-play-fill" viewBox="0 0 16 16">
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
                   </svg>
                 </button>
@@ -168,115 +168,117 @@
                   <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
                 </svg>
               </div>
-              <div class="container mb-5">
+              <div class="container-fluid mb-5 mx-0">
                 <div class="row">
-                  <div class="col-7">
+                  <div class="col-12 col-md-7">
                     <h2 class="text-white my-3 h4 fw-bold py-3">Popolari</h2>
-                    <div class="container mb-3">
-                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                    <div id="containerTracks" class="container mb-3">
+                      <!--    <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
                       </div>
                       <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
                       </div>
                       <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
                       </div>
                       <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
                       </div>
                       <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
                       </div>
                       <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
                         <div class="col-7 d-flex justify-content-start align-items-center">
-                          <p id="numberSong" class="font-off m-0 fw-light fs-7">1</p>
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
                           <div class="containerPhotoSong mx-3">
                             <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
                           </div>
-                          <p id="nameSong" class="text-white m-0">Ocean Avenue</p>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
                         </div>
                         <div class="col-3">
-                          <p id="listeners" class="font-off m-0 fw-light fs-7">276.616.912</p>
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
                         </div>
                         <div class="col-2">
-                          <p id="timeSong" class="font-off m-0 fw-light fs-7">3:18</p>
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                     <a href="" class="fs-7 font-off text-decoration-none mb-5" id="showMore">VISUALIZZA ALTRO</a>
                   </div>
-                  <div class="col-5">
-                    <h2 class="text-white my-3 h4 fw-bold py-3">Brani che ti piacciono</h2>
-                    <div class="d-flex justify-content-start align-items-center">
-                      <div class="rounded-circle me-2" id="imgLike">
-                        <img src="./assets/imgs/main/image-1.jpg" alt="" class="img-fluid rounded-circle" />
-                      </div>
-                      <div class="card-body p-0 font-off">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <p class="card-title text-white fs-6 p-0 m-0 fw-bold">Hai messo Mi piace a 11 brani</p>
+                  <div class="d-none d-md-block col-sm-5">
+                    <div>
+                      <h2 class="text-white my-3 h4 fw-bold py-3">Brani che ti piacciono</h2>
+                      <div class="d-flex justify-content-start align-items-center">
+                        <div class="rounded-circle me-2" id="imgLike">
+                          <img src="./assets/imgs/main/image-1.jpg" id="liked" alt="" class="img-fluid rounded-circle" />
                         </div>
-                        <p class="card-text font-off fs-7 p-0 my-1">Di Yellowcard</p>
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title text-white fs-6 p-0 m-0 fw-bold">Hai messo Mi piace a 11 brani</p>
+                          </div>
+                          <p id="pLike" class="card-text font-off fs-7 p-0 my-1">Di Yellowcard</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -286,7 +288,7 @@
             <footer class="px-4 pb-4">
               <div class="container">
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-4 col-md-3">
                     <h6 class="text-white m-0">Azienda</h6>
                     <ul style="list-style-type: none" class="p-0 mt-2">
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Chi siamo</a></li>
@@ -295,7 +297,7 @@
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Contatti</a></li>
                     </ul>
                   </div>
-                  <div class="col-3">
+                  <div class="col-4 col-md-3">
                     <h6 class="text-white m-0">Comunità</h6>
                     <ul style="list-style-type: none" class="p-0 mt-2">
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Artisti</a></li>
@@ -304,7 +306,7 @@
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Investitori</a></li>
                     </ul>
                   </div>
-                  <div class="col-3">
+                  <div class="col-4 col-md-3">
                     <h6 class="text-white m-0">Link Utili</h6>
                     <ul style="list-style-type: none" class="p-0 mt-2">
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Assistenza</a></li>
@@ -313,7 +315,7 @@
                       <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Termini</a></li>
                     </ul>
                   </div>
-                  <div class="col-3 d-flex justify-content-start">
+                  <div class="col-3 d-none d-md-flex justify-content-start">
                     <a href="https://www.instagram.com/spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-instagram.svg" alt="" /></a>
                     <a href="https://x.com/spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-twitter.svg" alt="" /></a>
                     <a href="https://www.facebook.com/Spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-facebook.svg" alt="" /></a>
@@ -322,7 +324,7 @@
               </div>
             </footer>
           </div>
-          <div class="col-12 col-md-3 col-lg-3 col-xxl-2 bg-black px-4 pt-3 d-none d-md-block" id="aside-right">
+          <div class="col-lg-2 col-xxl-2 bg-black px-4 pt-3 d-none d-xl-block" id="aside-right">
             <div class="d-flex justify-content-between align-items-center mb-5">
               <p class="text-white m-0 fs-5">Attività amici</p>
               <div class="d-flex">
@@ -454,5 +456,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./artist.js"></script>
   </body>
 </html>

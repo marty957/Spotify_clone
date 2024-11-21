@@ -1,3 +1,5 @@
+//import Vibrant from "node-vibrant";
+
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -77,6 +79,19 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     const totalTime = document.getElementById("totalTime");
 
     albumImage.src = albumData.cover_big;
+
+    /*const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    albumImage.crossOrigin = "anonymous";
+    albumImage.src = proxyUrl + albumData.cover_big;
+
+    albumImage.onload = () => {
+      const vibrant = new Vibrant(albumImage);
+      vibrant.getPalette().then((palette) => {
+        const dominantColor = palette.Vibrant.getHex();
+        console.log("Dominant Color:", dominantColor);
+        albumContainer.style.backgroundColor = dominantColor;
+      });
+    };*/
     albumTitle.textContent = albumData.title;
     artistName.textContent = albumData.artist.name;
     smallImage.src = albumData.cover_small;
@@ -132,3 +147,14 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     });
   })
   .catch((error) => console.log(error));
+
+const back = document.getElementById("back");
+const forward = document.getElementById("forward");
+
+back.addEventListener("click", () => {
+  window.history.back();
+});
+
+forward.addEventListener("click", () => {
+  window.history.forward();
+});
