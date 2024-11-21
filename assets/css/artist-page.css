@@ -36,6 +36,13 @@ h1 {
   background-position: center;
 }
 
+.fs-single-song {
+  font-size: 1rem;
+}
+.fs-listeners {
+  font-size: 0.75rem;
+}
+
 .fs-7 {
   font-size: 0.75rem;
 }
@@ -44,8 +51,8 @@ h1 {
 }
 
 #playBtn {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 
 #playBtn:hover {
@@ -86,4 +93,23 @@ h1 {
 
 footer li a:hover {
   color: #1db954;
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    letter-spacing: -4px;
+    font-size: 5rem;
+  }
+  .fs-single-song {
+    font-size: 0.75rem;
+  }
+  .fs-listeners {
+    font-size: 0.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  h1 {
+    letter-spacing: -4px;
+    font-size: 4rem;
+  }
 }
