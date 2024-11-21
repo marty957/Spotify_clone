@@ -341,3 +341,10 @@ img.object-fit-cover {
 #playPauseBtn:hover {
   box-shadow: 1px 1px 20px #1bd760;
 }
+
+#shuffleIcon:hover  {
+  fill: #00ff37;
+}
+#repeatIcon:hover {
+  fill: #00ff37;
+}

@@ -164,3 +164,165 @@ back.addEventListener("click", () => {
 forward.addEventListener("click", () => {
   window.history.forward();
 });
+
+
+// عناصر پلیر
+const playPauseBtn2 = document.getElementById("playPauseBtn2");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const shuffleBtn = document.getElementById("shuffleBtn");
+const repeatBtn = document.getElementById("repeatBtn");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const totalTimeEl = document.getElementById("totalTime");
+const volumeBar = document.getElementById("volumeBar");
+const albumCover = document.getElementById("albumCover");
+const trackTitle = document.getElementById("trackTitle");
+const trackArtist = document.getElementById("trackArtist");
+
+// متغیرهای کنترلی
+
+let currentTrackIndex = 0;
+let isShuffle = false;
+let isRepeat = false;
+let tracks = []; // لیست آهنگ‌ها
+
+// مقداردهی پلیر
+function initializePlayer(albumTracks) {
+  tracks = albumTracks;
+  loadTrack(currentTrackIndex);
+}
+
+// بارگذاری آهنگ
+function loadTrack(index) {
+  if (tracks[index]) {
+    const track = tracks[index];
+    currentAudio = new Audio(track.preview);
+    albumCover.src = track.album.cover_medium;
+    trackTitle.textContent = track.title;
+    trackArtist.textContent = track.artist.name;
+
+    // بروزرسانی زمان
+    currentAudio.addEventListener("loadedmetadata", () => {
+      totalTimeEl.textContent = formatTime(currentAudio.duration);
+      progressBar.value = 0;
+      progressBar.max = Math.floor(currentAudio.duration);
+    });
+
+    // بروزرسانی پیشرفت آهنگ
+    currentAudio.addEventListener("timeupdate", () => {
+      progressBar.value = Math.floor(currentAudio.currentTime);
+      currentTimeEl.textContent = formatTime(currentAudio.currentTime);
+    });
+
+    // اتمام آهنگ
+    currentAudio.addEventListener("ended", () => {
+      if (isRepeat) {
+        playTrack();
+      } else if (isShuffle) {
+        currentTrackIndex = Math.floor(Math.random() * tracks.length);
+        loadTrack(currentTrackIndex);
+        playTrack();
+      } else {
+        nextTrack();
+      }
+    });
+  }
+}
+
+// پخش آهنگ
+function playTrack() {
+  if (currentAudio) {
+    currentAudio.play();
+    isPlaying = true;
+    playPauseBtn2.textContent = "⏸️";
+  }
+}
+
+// توقف آهنگ
+function pauseTrack() {
+  if (currentAudio) {
+    currentAudio.pause();
+    isPlaying = false;
+    playPauseBtn2.textContent = "⏯️";
+  }
+}
+
+// آهنگ بعدی
+function nextTrack() {
+  if (currentAudio) {
+    currentAudio.pause(); // توقف آهنگ قبلی
+    currentAudio.currentTime = 0; // بازگشت به ابتدای آهنگ
+  }
+
+  // تغییر به آهنگ بعدی
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  loadTrack(currentTrackIndex);
+  playTrack();
+}
+
+// آهنگ قبلی
+function prevTrack() {
+  if (currentAudio) {
+    currentAudio.pause(); // توقف آهنگ قبلی
+    currentAudio.currentTime = 0; // بازگشت به ابتدای آهنگ
+  }
+  currentTrackIndex =
+    (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrackIndex);
+  playTrack();
+}
+
+// تغییر وضعیت پخش
+playPauseBtn2.addEventListener("click", () => {
+  if (isPlaying) {
+    pauseTrack();
+  } else {
+    playTrack();
+  }
+});
+
+// آهنگ بعدی و قبلی
+nextBtn.addEventListener("click", nextTrack);
+prevBtn.addEventListener("click", prevTrack);
+
+// تنظیم صدا
+volumeBar.addEventListener("input", () => {
+  if (currentAudio) {
+    currentAudio.volume = volumeBar.value / 100;
+  }
+});
+
+// تنظیم پیشرفت آهنگ
+progressBar.addEventListener("input", () => {
+  if (currentAudio) {
+    currentAudio.currentTime = progressBar.value;
+  }
+});
+
+// تغییر حالت Shuffle
+shuffleBtn.addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  shuffleBtn.style.color = isShuffle ? "green" : "black";
+});
+
+// تغییر حالت Repeat
+repeatBtn.addEventListener("click", () => {
+  isRepeat = !isRepeat;
+  repeatBtn.style.color = isRepeat ? "green" : "black";
+});
+
+// فرمت زمان
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
+}
+
+// مقداردهی اولیه با API
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
+  .then((res) => res.json())
+  .then((data) => {
+    initializePlayer(data.tracks.data);
+  })
+  .catch((err) => console.error(err));
