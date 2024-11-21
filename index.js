@@ -142,13 +142,13 @@ const displayAlbum = () => {
       buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards me-3 mb-3">
                       <div class="row g-0">
                         <div class="col-3">
-                          <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><img src="${albums[i].album.cover_medium}" class="img-fluid rounded-start object-fit-cover" alt="" /></a>
+                          <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><img src="${albums[i].album.cover_medium}" class="img-fluid rounded-start object-fit-cover" alt="" /></a>
                         </div>
                         <div class="col-9">
                           <div class="card-body">
-                            <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><p class="card-text text-white fs-6 mt-3 text-truncate">${albums[i].album.title}</p></a>
+                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 mt-3 text-truncate">${albums[i].album.title}</p></a>
                             <p class="card-text lead fs-6">
-                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${album.artist.id}"><small class="text-white">${album.artist.name}.</small></a>
+                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white">${albums[i].artist.name}.</small></a>
                             </p>
                           </div>
                         </div>
@@ -165,11 +165,11 @@ const displayAlbum = () => {
       const altroCard = document.createElement("div");
       altroCard.classList.add("card", "rounded-1", "me-3", "bg-secondary-cards", "text-white", "border-0");
       altroCard.innerHTML = `<div class="p-3">
-                     <a class="text-decoration-none text-white object-fit-cover rounded img-fluid img.object-fit-cover" href="./album.html?albumId=${album.album.id}"> <img src="${albums[i].album.cover_medium}" class="object-fit-cover rounded img-fluid img.object-fit-cover" alt="..." /></a>
+                     <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="object-fit-cover rounded img-fluid" alt="..." /></a>
                     </div>
                     <div class="card-body">
                       <p class="card-title fw-bold text-truncate ">${albums[i].album.title}</p>
-                     <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${album.artist.id}"><p class="card-text font-off">${albums[i].artist.name}.</p></a>
+                     <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><p class="card-text font-off">${albums[i].artist.name}.</p></a>
                     </div>`;
       altro.appendChild(altroCard);
     }
