@@ -1,3 +1,5 @@
+//import Vibrant from "node-vibrant";
+
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -47,11 +49,15 @@ function stopTracks() {
 
 playPauseBtn.addEventListener("click", () => {
   if (!isPlaying) {
-    playPauseBtn.textContent = "Pause";
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-stop-fill" viewBox="0 0 16 16">
+                              <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5"/>
+                            </svg>`;
     playTracks();
     isPlaying = true;
   } else {
-    playPauseBtn.textContent = "Play";
+    playPauseBtn.innerHTML = `  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-play-fill" viewBox="0 0 16 16">
+                      <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                    </svg>`;
     stopTracks();
     isPlaying = false;
   }
@@ -77,6 +83,19 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     const totalTime = document.getElementById("totalTime");
 
     albumImage.src = albumData.cover_big;
+
+    /*const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    albumImage.crossOrigin = "anonymous";
+    albumImage.src = proxyUrl + albumData.cover_big;
+
+    albumImage.onload = () => {
+      const vibrant = new Vibrant(albumImage);
+      vibrant.getPalette().then((palette) => {
+        const dominantColor = palette.Vibrant.getHex();
+        console.log("Dominant Color:", dominantColor);
+        albumContainer.style.backgroundColor = dominantColor;
+      });
+    };*/
     albumTitle.textContent = albumData.title;
     artistName.textContent = albumData.artist.name;
     smallImage.src = albumData.cover_small;
@@ -87,23 +106,25 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     albumData.tracks.data.forEach((element, index) => {
       const tracksContainer = document.getElementById("tracksContainer");
       const track = document.createElement("div");
-      track.classList.add("row", "mt-3");
+      track.classList.add("row", "mt-3", "justify-content-start", "align-items-center", "py-1", "rounded");
       track.setAttribute("id", "track");
 
-      track.innerHTML = `<div class="col-7">
-                      <div class="d-flex">
-                        <span class="h-100 font-off">${index + 1}</span>
-                        <div class="d-inline-block font-off ms-2">
-                          <h4 class="fs-6 m-0">${element.title}</h4>
-                          <p class="m-0">${element.artist.name}</p>
+      track.innerHTML = `<div class="col-7 d-flex justify-content-start align-items-center">
+                     
+                        <p class="m-0 font-off fs-listeners">${index + 1}</p>
+                        <div class="d-inline-block font-off  ms-3">
+                          <p class="fs-6 m-0 text-white ">${element.title}</p>
+                          <p class="m-0 fs-7">${element.artist.name}</p>
                         </div>
                       </div>
-                    </div>
+                    
                     <div class="col-3">
-                      <p class="font-off text-center">${element.rank}</p>
+                      <p class="font-off text-center m-0 fs-listeners">${element.rank}</p>
                     </div>
                     <div class="col-2">
-                      <p class="font-off text-center">${convertSeconds(element.duration).minutes}:${convertSeconds(element.duration).remainingSeconds}</p>
+                      <p class="font-off text-center m-0 fs-listeners">${convertSeconds(element.duration).minutes}:${
+        convertSeconds(element.duration).remainingSeconds
+      }</p>
                     </div>`;
 
       track.addEventListener("click", () => {
@@ -132,3 +153,14 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     });
   })
   .catch((error) => console.log(error));
+
+const back = document.getElementById("back");
+const forward = document.getElementById("forward");
+
+back.addEventListener("click", () => {
+  window.history.back();
+});
+
+forward.addEventListener("click", () => {
+  window.history.forward();
+});

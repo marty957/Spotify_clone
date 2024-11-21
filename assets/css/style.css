@@ -48,9 +48,13 @@ h1 {
   font-size: 0.5rem;
 }
 
+.fs-listeners {
+  font-size: 0.75rem;
+}
+
 #playBtn {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
 }
 
 #playBtn:hover {
@@ -332,4 +336,8 @@ img.object-fit-cover {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+#playPauseBtn:hover {
+  box-shadow: 1px 1px 20px #1bd760;
 }
