@@ -79,14 +79,14 @@ const displayAlbum = () => {
 
   albumCard.innerHTML = `
     <div class="row g-0 justify-content-between">
-      <div class="col-3 p-2">
+      <div class="col-3 p-3">
         <img id="Cover" src="${album.album.cover_medium}" class="img-fluid object-fit-cover" alt="${album.album.title}" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
           <div class="mb-2 d-flex justify-content-between">
             <p class="fs-7">ALBUM</p>
-            <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold" id="toggle-content"> NASCONDI ANNUNCI</button>
+            <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold " id="toggle-content"> NASCONDI ANNUNCI</button>
           </div>
           <div id="album-content">
             <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><h2 class="card-title display-4 fw-bold text-truncate">${album.album.title}</h2></a>

@@ -81,6 +81,9 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
     const year = document.getElementById("year");
     const numberOfSongs = document.getElementById("numberOfSongs");
     const totalTime = document.getElementById("totalTime");
+    const linkToArtist = document.getElementById("linkToArtist");
+    linkToArtist.href = `./artist-page.html?artistId=${albumData.artist.id}`;
+    console.log(albumData.artist.id);
 
     albumImage.src = albumData.cover_big;
 
@@ -326,7 +329,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
   .then((data) => {
     initializePlayer(data.tracks.data);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.error(err));
 
 // Cambia Background
 
