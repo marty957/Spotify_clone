@@ -80,23 +80,23 @@ const displayAlbum = () => {
   albumCard.innerHTML = `
     <div class="row g-0 justify-content-between">
       <div class="col-3 p-3">
-        <img id="Cover" src="${album.album.cover_medium}" class="img-fluid object-fit-cover" alt="${album.album.title}" />
+        <img id="Cover" src="${album.album.cover_medium}" class="img-fluid object-fit-cover shadow-lg" alt="${album.album.title}" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
           <div class="mb-2 d-flex justify-content-between">
             <p class="fs-7">ALBUM</p>
-            <button type="button" class="btn bg-main-section btn-sm rounded-pill font-off fs-7 fw-bold " id="toggle-content"> NASCONDI ANNUNCI</button>
+            <button type="button" class="btn btn-sm rounded-pill font-off fs-7 fw-bold text-white" id="toggle-content"> NASCONDI ANNUNCI</button>
           </div>
           <div id="album-content">
-            <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><h2 class="card-title display-4 fw-bold text-truncate">${album.album.title}</h2></a>
-            <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${album.artist.id}"><p class="card-text lead fs-6"> ${album.artist.name}</p></a>
-            <p class="card-text lead fs-6">
-              <small class="text-white">Listen to the new single by ${album.artist.name}.</small>
+            <a class="text-decoration-none text-white" href="./album.html?albumId=${album.album.id}"><h2 class="card-title display-3 fw-bold text-truncate ">${album.album.title}</h2></a>
+            <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${album.artist.id}"><p class="card-text fw-bold fs-5 mb-2"> ${album.artist.name}</p></a>
+            <p class="card-text lead fs-6 mb-4">
+              <small class="text-white fs-6">Listen to the new single by ${album.artist.name}.</small>
             </p>
             <div class="d-flex align-items-center">
               <button class="text-black rounded-pill fs-7 lead px-4 py-2 fw-bold play-btn" data-preview="${album.preview}" data-title="${album.album.title}" data-artist="${album.artist.name}" data-cover="${album.album.cover_medium}">Play</button>
-              <button class="btn btn-secondary text-white rounded-pill fs-7 lead px-4 py-2 fw-bold border border-white border-opacity-25 mx-3">salva</button>
+              <button class="text-white rounded-pill fs-7 lead px-4 py-2 fw-bold play-btn ms-3 bg-black">Salva</button>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ const displayAlbum = () => {
                         </div>
                         <div class="col-9">
                           <div class="card-body">
-                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 mt-3 text-truncate">${albums[i].album.title}</p></a>
+                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 m-0 text-truncate">${albums[i].album.title}</p></a>
                             <p class="card-text lead fs-6">
                              <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white">${albums[i].artist.name}.</small></a>
                             </p>
@@ -177,7 +177,7 @@ const displayAlbum = () => {
     for (let i = 7; i < 11; i++) {
       const altroCard = document.createElement("div");
       altroCard.classList.add("col-12", "col-sm-3");
-      altroCard.innerHTML = `<div class="card rounded-1  bg-secondary-cards text-white border-0 " id="cardAltro">
+      altroCard.innerHTML = `<div class="card rounded-3  bg-secondary-cards text-white border-0 " id="cardAltro">
     <div id="containerAltroImg">
     <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="p-3 card-img-top object-fit-cover rounded img-fluid" alt="..." /></a>
     
