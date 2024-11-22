@@ -1,3 +1,5 @@
+import { extractColor } from "./canvas.js";
+
 // Fetch albums when the page loads
 window.addEventListener("DOMContentLoaded", (event) => {
   fetchAllAlbums();
@@ -72,13 +74,13 @@ const displayAlbum = () => {
   const album = albums[currentAlbumIndex];
 
   const albumCard = document.createElement("div");
-  albumCard.classList.add("card", "mb-3", "rounded-0", "border-0", "text-white", "w-100", "gradient");
+  albumCard.classList.add("card", "mb-3", "rounded-0", "border-0", "text-white", "w-100" /* "gradient" */);
   albumCard.setAttribute("id", "album-card");
 
   albumCard.innerHTML = `
     <div class="row g-0 justify-content-between">
       <div class="col-3 p-2">
-        <img src="${album.album.cover_medium}" class="img-fluid my-3 mx-2" alt="${album.album.title}" />
+        <img id="Cover" src="${album.album.cover_medium}" class="img-fluid object-fit-cover" alt="${album.album.title}" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -104,6 +106,12 @@ const displayAlbum = () => {
 
   albumsContainer.appendChild(albumCard);
 
+  const albumCover = document.getElementById("Cover");
+  albumCover.setAttribute("crossorigin", "anonymous");
+
+  albumCover.addEventListener("load", () => {
+    extractColor();
+  });
   // Manage the Play button
   const playButton = document.querySelector(".play-btn");
   playButton.addEventListener("click", () => {
@@ -116,7 +124,9 @@ const displayAlbum = () => {
       // Pause music
       audioPlayer.pause();
       playButton.textContent = "Play";
-      playPauseBtn.textContent = "⏯️";
+      playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+    </svg>`;
       isPlaying = false;
     } else {
       // Play music
@@ -124,13 +134,16 @@ const displayAlbum = () => {
       audioPlayer.play();
       isPlaying = true;
       playButton.textContent = "Stop";
-      playPauseBtn.textContent = "⏸️";
+      playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
+    </svg>`;
 
       // Update bottom player
       playerTitle.textContent = title;
       playerArtist.textContent = artist;
       playerCover.src = cover;
       playerContainer.style.display = "flex";
+      playerContainer.classList.remove("d-none");
     }
   });
 
@@ -138,17 +151,17 @@ const displayAlbum = () => {
   if (isCreateBuonasera === 0) {
     for (let i = 1; i < 7; i++) {
       const buonaseraCard = document.createElement("div");
-      buonaseraCard.classList.add("col-4");
-      buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards  mb-3  ">
+      buonaseraCard.classList.add("col-4", "g-0");
+      buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards me-3 mb-3">
                       <div class="row g-0">
-                        <div class="col-12 col-md-3">
+                        <div class="col-3">
                           <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><img src="${albums[i].album.cover_medium}" class="img-fluid rounded-start object-fit-cover" alt="" /></a>
                         </div>
-                        <div class="col-12 col-md-9">
+                        <div class="col-9">
                           <div class="card-body">
-                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 text-truncate">${albums[i].album.title}</p></a>
-                            <p class="card-text lead fs-6 text-truncate">
-                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white ">${albums[i].artist.name}.</small></a>
+                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 mt-3 text-truncate">${albums[i].album.title}</p></a>
+                            <p class="card-text lead fs-6">
+                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white">${albums[i].artist.name}.</small></a>
                             </p>
                           </div>
                         </div>
@@ -165,16 +178,16 @@ const displayAlbum = () => {
       const altroCard = document.createElement("div");
       altroCard.classList.add("col-12", "col-sm-3");
       altroCard.innerHTML = `<div class="card rounded-1  bg-secondary-cards text-white border-0 " id="cardAltro">
-      <div id="containerAltroImg">
-      <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="p-3 card-img-top object-fit-cover rounded img-fluid" alt="..." /></a>
-      
-      </div>
-      
-      <div class="card-body">
-      <p class="card-title fw-bold text-truncate ">${albums[i].album.title}</p>
-      <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><p class="card-text font-off text-truncate">${albums[i].artist.name}.</p></a>
-      </div>
-      </div>`;
+    <div id="containerAltroImg">
+    <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="p-3 card-img-top object-fit-cover rounded img-fluid" alt="..." /></a>
+    
+    </div>
+    
+    <div class="card-body">
+    <p class="card-title fw-bold text-truncate ">${albums[i].album.title}</p>
+    <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><p class="card-text font-off text-truncate">${albums[i].artist.name}.</p></a>
+    </div>
+    </div>`;
       altro.appendChild(altroCard);
     }
     isCreateAltro = 1; // Mark as created
@@ -201,11 +214,15 @@ previousButton.addEventListener("click", () => {
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {
     audioPlayer.pause();
-    playPauseBtn.textContent = "⏯️";
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+</svg>`;
     isPlaying = false;
   } else {
     audioPlayer.play();
-    playPauseBtn.textContent = "⏸️";
+    playPauseBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
+</svg>`;
     isPlaying = true;
   }
 });

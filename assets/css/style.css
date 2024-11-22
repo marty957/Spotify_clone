@@ -100,8 +100,8 @@ footer li a:hover {
   background-color: transparent;
 }
 .gradient2 {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
+  background: rgb(18, 18, 18);
+  background: linear-gradient(0deg, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 1) 70%, rgba(105, 105, 105, 0) 100%);
 }
 
 .main-content {
@@ -143,10 +143,10 @@ body {
 .trasparent {
   background-color: transparent;
 }
-.gradient2 {
+/* .gradient2 {
   background: rgb(0, 0, 0);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
-}
+} */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -374,4 +374,8 @@ img.object-fit-cover {
 
 #hrLeft {
   margin-right: 10px;
+}
+
+.album-color {
+  background-color: yellow;
 }
