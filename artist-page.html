@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify | ArtistPage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/artist-page.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon.0f31d2ea.ico" />
+  </head>
+  <body>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 bg-black ps-4 pt-3 d-lg-block d-none" id="aside-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="text-white bi bi-three-dots" viewBox="0 0 16 16">
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+            </svg>
+            <div class="my-2">
+              <div class="mt-3">
+                <a href="./index.html" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="text-white bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Home</span>
+                </a>
+              </div>
+
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="text-white bi bi-search" viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Cerca</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-collection-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">La tua libreria</span>
+                </a>
+              </div>
+            </div>
+            <div class="my-3">
+              <div class="mt-5">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Crea Playlist</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#442BA6" class="bi bi-box2-heart-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1zM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+                    />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">Brani che ti piacciono</span>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="text-decoration-none text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="green" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                    <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                  </svg>
+                  <span class="ms-3 align-middle fs-6 font-off">I tuoi episodi</span>
+                </a>
+              </div>
+            </div>
+            <div id="containerSc" class="scrollable-list-container">
+              <ul class="list-unstyled font-off scrollable-list">
+                <hr id="hrLeft" class="text-secondary mt-0" />
+                <li class="fs-7">early stage emily syndrome (sett-ott 2022)</li>
+                <li class="fs-7">Be The Young</li>
+                <li class="fs-7">"..." cit. Kimiko (lug-ago 2022)</li>
+                <li class="fs-7">saggio vibes 💃🕺</li>
+                <li class="fs-7">main character energy (mag-giu 2022)</li>
+                <li class="fs-7">that fucking mood 🔪💀</li>
+                <li class="fs-7">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</li>
+                <li class="fs-7">An Emily Winchester kind of mood 🔪🖕</li>
+                <li class="fs-7">landing page (mar-apr 2022) ℹ️</li>
+                <li class="fs-7">2021 lol</li>
+                <li class="fs-7">cosa cazzo vuol dire questa affermazione (gen-feb 2022) ℹ️</li>
+                <li class="fs-7">honey and glass (nov-dic 2021)</li>
+                <li class="fs-7">(Revenge) Training Arc 🦅</li>
+                <li class="fs-7">Lidia 🤝 Emily</li>
+                <li class="fs-7">minecraft e nintendo switch (sep-oct 2021)</li>
+                <li class="fs-7">silvano d'orba? I hardly know her (lug - ago 2021)</li>
+                <li class="fs-7">Culo 2021 🎼</li>
+                <li class="fs-7">Frah Quintale Mix</li>
+                <li class="fs-7">Francesco Guccini Mix</li>
+                <li class="fs-7">early stage emily syndrome (sett-ott 2022)</li>
+                <li class="fs-7">Be The Young</li>
+                <li class="fs-7">"..." cit. Kimiko (lug-ago 2022)</li>
+                <li class="fs-7">saggio vibes 💃🕺</li>
+                <li class="fs-7">main character energy (mag-giu 2022)</li>
+                <li class="fs-7">that fucking mood 🔪💀</li>
+                <li class="fs-7">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</li>
+                <li class="fs-7">An Emily Winchester kind of mood 🔪🖕</li>
+                <li class="fs-7">landing page (mar-apr 2022) ℹ️</li>
+                <li class="fs-7">2021 lol</li>
+                <li class="fs-7">cosa cazzo vuol dire questa affermazione (gen-feb 2022) ℹ️</li>
+                <li class="fs-7">honey and glass (nov-dic 2021)</li>
+                <li class="fs-7">(Revenge) Training Arc 🦅</li>
+                <li class="fs-7">Lidia 🤝 Emily</li>
+                <li class="fs-7">minecraft e nintendo switch (sep-oct 2021)</li>
+                <li class="fs-7">silvano d'orba? I hardly know her (lug - ago 2021)</li>
+                <li class="fs-7">Culo 2021 🎼</li>
+                <li class="fs-7">Frah Quintale Mix</li>
+                <li class="fs-7">Francesco Guccini Mix</li>
+                <li class="fs-7">early stage emily syndrome (sett-ott 2022)</li>
+                <li class="fs-7">Be The Young</li>
+                <li class="fs-7">"..." cit. Kimiko (lug-ago 2022)</li>
+                <li class="fs-7">saggio vibes 💃🕺</li>
+                <li class="fs-7">main character energy (mag-giu 2022)</li>
+                <li class="fs-7">that fucking mood 🔪💀</li>
+                <li class="fs-7">VEE, CARLOTTA E GIACOMO VANNO A BOSIO</li>
+                <li class="fs-7">An Emily Winchester kind of mood 🔪🖕</li>
+                <li class="fs-7">landing page (mar-apr 2022) ℹ️</li>
+                <li class="fs-7">2021 lol</li>
+                <li class="fs-7">cosa cazzo vuol dire questa affermazione (gen-feb 2022) ℹ️</li>
+                <li class="fs-7">honey and glass (nov-dic 2021)</li>
+                <li class="fs-7">(Revenge) Training Arc 🦅</li>
+                <li class="fs-7">Lidia 🤝 Emily</li>
+                <li class="fs-7">minecraft e nintendo switch (sep-oct 2021)</li>
+                <li class="fs-7">silvano d'orba? I hardly know her (lug - ago 2021)</li>
+                <li class="fs-7">Culo 2021 🎼</li>
+                <li class="fs-7">Frah Quintale Mix</li>
+                <li class="fs-7">Francesco Guccini Mix</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9 col-xxl-7 bg-main-section p-0" id="main-section">
+            <div id="bannerArtist">
+              <div class="container-fluid m-0 px-4">
+                <div class="d-none justify-content-end justify-content-lg-between py-3 align-items-center d-sm-flex">
+                  <div class="d-none d-lg-flex">
+                    <svg
+                      id="back"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="27"
+                      height="27"
+                      fill="gray"
+                      class="btn rounded-circle p-1 bg-arrows bi bi-chevron-left me-2"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                      />
+                    </svg>
+                    <svg
+                      id="forward"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="27"
+                      height="27"
+                      fill="gray"
+                      class="btn rounded-circle p-1 bg-arrows bi bi-chevron-right me-2"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                      />
+                    </svg>
+                  </div>
+                  <div class="dropdown">
+                    <a
+                      class="btn bg-arrows dropdown-toggle text-white rounded-pill p-0 pe-1 fs-6"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      ><img
+                        src="https://cdn.pixabay.com/photo/2024/03/03/12/08/woman-8610292_1280.jpg"
+                        alt=""
+                        width="30px"
+                        height="30px"
+                        class="rounded-circle me-2"
+                        style="vertical-align: middle"
+                      />Martina Fantuzzi</a
+                    >
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="bannerText px-4 mt-0 mt-sm-5 pt-5">
+                <div class="d-flex justify-content-start align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#3D91F4" class="bi bi-patch-check-fill me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                    />
+                  </svg>
+                  <p class="text-white fs-6 m-0 fw-bold">Artista Verificato</p>
+                </div>
+                <h1 id="nameArtist" class="text-white fw-bold m-0 my-1 mb-4">Yellowcard</h1>
+                <p id="nbFans" class="fs-6 text-white pb-4">3.433.158 ascoltatori mensili</p>
+              </div>
+            </div>
+            <section class="px-4">
+              <div class="d-flex justify-content-start align-items-center mt-4" id="playContainer">
+                <button type="button" class="spotify border-0 rounded-circle me-4" id="playBtn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                  </svg>
+                </button>
+                <button class="btn border border-1 me-4 fs-7 fw-bold py-2 px-3" type="button" id="followBtn">FOLLOWING</button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="me-4 xtext-white bi bi-three-dots" viewBox="0 0 16 16">
+                  <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+              </div>
+              <div class="container-fluid mb-5 mx-0">
+                <div class="row">
+                  <div class="col-12 col-md-7">
+                    <h2 class="text-white my-3 h4 fw-bold py-3">Popolari</h2>
+                    <div id="containerTracks" class="container mb-3">
+                      <!--    <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-start align-items-center mb-3 rounded py-1" id="singleSong">
+                        <div class="col-7 d-flex justify-content-start align-items-center">
+                          <p id="numberSong" class="font-off m-0 fw-light fs-listeners">1</p>
+                          <div class="containerPhotoSong mx-3">
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" id="photoSong" class="img-fluid" />
+                          </div>
+                          <p id="nameSong" class="text-white m-0 fs-single-song">Ocean Avenue</p>
+                        </div>
+                        <div class="col-3">
+                          <p id="listeners" class="font-off m-0 fw-light fs-listeners">276.616.912</p>
+                        </div>
+                        <div class="col-2">
+                          <p id="timeSong" class="font-off m-0 fw-light fs-listeners">3:18</p>
+                        </div>
+                      </div> -->
+                    </div>
+                    <a href="" class="fs-7 font-off text-decoration-none mb-5" id="showMore">VISUALIZZA ALTRO</a>
+                  </div>
+                  <div class="d-none d-md-block col-5">
+                    <h2 class="text-white my-3 h4 fw-bold py-3">Brani che ti piacciono</h2>
+                    <div class="d-flex justify-content-start align-items-center">
+                      <div class="rounded-circle me-2" id="imgLike">
+                        <img id="liked" src="./assets/imgs/main/image-1.jpg" alt="" class="img-fluid rounded-circle" />
+                      </div>
+                      <div class="card-body p-0 font-off">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <p class="card-title text-white fs-6 p-0 m-0 fw-bold">Hai messo Mi piace a 11 brani</p>
+                        </div>
+                        <p id="pLike" class="card-text font-off fs-7 p-0 my-1"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <footer class="px-4 pb-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-4 col-md-3">
+                    <h6 class="text-white m-0">Azienda</h6>
+                    <ul style="list-style-type: none" class="p-0 mt-2">
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Chi siamo</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Carriere</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Stampa</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Contatti</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-md-3">
+                    <h6 class="text-white m-0">Comunità</h6>
+                    <ul style="list-style-type: none" class="p-0 mt-2">
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Artisti</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Sviluppatori</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Brand</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Investitori</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-md-3">
+                    <h6 class="text-white m-0">Link Utili</h6>
+                    <ul style="list-style-type: none" class="p-0 mt-2">
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Assistenza</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">App gratuita</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Privacy</a></li>
+                      <li class="text-decoration-none"><a href="#" class="text-decoration-none font-off fs-7">Termini</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-3 d-none d-md-flex justify-content-start">
+                    <a href="https://www.instagram.com/spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-instagram.svg" alt="" /></a>
+                    <a href="https://x.com/spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-twitter.svg" alt="" /></a>
+                    <a href="https://www.facebook.com/Spotify" class="me-5 rounded-circle"><img src="./assets/imgs/svg/icons8-facebook.svg" alt="" /></a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+          <div class="col-lg-2 col-xxl-2 bg-black px-4 pt-3 d-none d-xl-block" id="aside-right">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <p class="text-white m-0 fs-5">Attività amici</p>
+              <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-person-fill-add ms-3" viewBox="0 0 16 16">
+                  <path
+                    d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"
+                  />
+                  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#B3B3B3" class="bi bi-x-lg ms-3" viewBox="0 0 16 16">
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 p-0 mb-4 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-9.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">Charlie Hookham</p>
+                            <p class="card-text font-off fs-7 p-0">4 ore</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">In Camera • Yumi Zouma</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-vinyl-fill"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0" />
+                            </svg>
+                            EP III
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 p-0 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-10.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">lightdark02</p>
+                            <p class="card-text font-off fs-7 p-0">8 ore</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">Aimed to Kill • Jade LeMac</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-vinyl-fill"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0" />
+                            </svg>
+                            Aimed to Kill
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 p-0 mb-4">
+                  <div class="card m-0 rounded-1 bg-transparent">
+                    <div class="row g-0">
+                      <div class="col-2">
+                        <img src="./assets/imgs/main/image-11.jpg" class="rounded-circle" alt="" width="35px" height="35px" />
+                      </div>
+                      <div class="col-10 ps-2">
+                        <div class="card-body p-0 font-off">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-title font-off fs-6 p-0 m-0 fw-bold">Valeria Traverso</p>
+                            <p class="card-text font-off fs-7 p-0">3 giorni</p>
+                          </div>
+                          <p class="card-text font-off fs-7 p-0 my-1">New Kings • Sleeping Wolf</p>
+                          <p class="card-text font-off fs-7 p-0 align-middle">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="10"
+                              height="10"
+                              fill="#B3B3B3"
+                              class="bi bi-music-note-beamed"
+                              viewBox="0 0 16 16"
+                              style="vertical-align: text-top"
+                            >
+                              <path
+                                d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"
+                              />
+                              <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z" />
+                              <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z" />
+                            </svg>
+                            Twint Badass mood
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="player" class="player-container">
+      <div class="player-left d-none d-md-flex">
+        <img src="" alt="Album Cover" class="album-cover" id="albumCover" />
+        <div class="track-info">
+          <p class="track-title m-0" id="trackTitle">Track Title</p>
+          <p class="track-artist m-0" id="trackArtist">Artist Name</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart mx-3" viewBox="0 0 16 16">
+          <path
+            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+          />
+        </svg>
+      </div>
+      <div class="player-center">
+        <div class="player-controls">
+          <button id="shuffleBtn" class="btn shuffle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-shuffle" viewBox="0 0 16 16  " id="shuffleIcon">
+              <path
+                fill-rule="evenodd"
+                d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+              />
+              <path
+                d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
+              />
+            </svg>
+          </button>
+          <button id="prevBtn" class="btn prev-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
+              <path
+                d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5"
+              />
+            </svg>
+          </button>
+          <button id="playPauseBtn2" class="btn play-pause-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+            </svg>
+          </button>
+          <button id="nextBtn" class="btn next-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
+              <path
+                d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"
+              />
+            </svg>
+          </button>
+          <button id="repeatBtn" class="btn repeat-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-repeat" viewBox="0 0 16 16" id="repeatIcon">
+              <path
+                d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="progress-container">
+          <span id="currentTime" class="current-time">0:00</span>
+          <input id="progressBar" type="range" class="progress-bar" value="0" max="100" />
+          <span id="totalTime" class="total-time">3:00</span>
+        </div>
+      </div>
+      <div class="player-right d-none d-md-block">
+        <button id="volumeBtn" class="btn volume-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+            <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z" />
+            <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z" />
+            <path
+              d="M10.025 8a4.5 4.5 0 0 1-1.318 3.182L8 10.475A3.5 3.5 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.5 4.5 0 0 1 10.025 8M7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11"
+            />
+          </svg>
+        </button>
+        <input id="volumeBar" type="range" class="volume-bar" value="50" max="100" />
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./artist.js"></script>
+  </body>
+</html>
