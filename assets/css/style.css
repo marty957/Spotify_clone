@@ -350,3 +350,8 @@ img.object-fit-cover {
 #playPauseBtn:hover {
   box-shadow: 1px 1px 20px #1bd760;
 }
+
+.bg-album {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, #121212 19%, #121212 29%, #121212 33%, rgba(197, 177, 105, 0) 0%);
+}
