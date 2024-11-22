@@ -144,6 +144,7 @@ const displayAlbum = () => {
       playerCover.src = cover;
       playerContainer.style.display = "flex";
       playerContainer.classList.remove("d-none");
+      playerContainer.classList.add("d-flex");
     }
   });
 

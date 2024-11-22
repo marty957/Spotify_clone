@@ -97,7 +97,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?
     }
   })
   .then((tracksdata) => {
-    const tracks = tracksdata.data;
+    const tracks=tracksdata.data;
     setupAudioElements(tracksdata.data);
     tracksdata.data.forEach((element, index) => {
       const containerTracks = document.getElementById("containerTracks");
@@ -143,6 +143,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?
         console.log(`Playing: ${element.title}`);
       });
       containerTracks.appendChild(tracks);
+      
     });
   })
 
@@ -158,6 +159,13 @@ back.addEventListener("click", () => {
 forward.addEventListener("click", () => {
   window.history.forward();
 });
+
+
+
+
+
+
+
 
 // Elementi del lettore
 const playPauseBtn2 = document.getElementById("playPauseBtn2");
@@ -238,7 +246,7 @@ function pauseTrack() {
   if (currentAudio) {
     currentAudio.pause();
     isPlaying = false;
-    playPauseBtn2.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+    playPauseBtn2.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
   </svg>`;
   }
@@ -263,7 +271,8 @@ function prevTrack() {
     currentAudio.pause(); // Pausa del brano precedente
     currentAudio.currentTime = 0; // Torna all'inizio del brano
   }
-  currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  currentTrackIndex =
+    (currentTrackIndex - 1 + tracks.length) % tracks.length;
   loadTrack(currentTrackIndex);
   playTrack();
 }
