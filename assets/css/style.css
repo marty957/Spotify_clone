@@ -1,6 +1,12 @@
 .gradient {
   background: rgb(0, 0, 0);
-  background: linear-gradient(15deg, rgba(0, 0, 0, 1) 31%, rgba(25, 24, 24, 1) 59%, rgba(64, 63, 63, 1) 100%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(
+    15deg,
+    rgba(0, 0, 0, 1) 31%,
+    rgba(25, 24, 24, 1) 59%,
+    rgba(64, 63, 63, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 body {
@@ -114,7 +120,13 @@ footer li a:hover {
 }
 .gradient2 {
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 19%,
+    rgba(10, 10, 10, 1) 29%,
+    rgba(10, 10, 10, 1) 33%,
+    rgba(214, 185, 77, 1) 100%
+  );
 }
 
 .main-content {
@@ -122,7 +134,13 @@ footer li a:hover {
 }
 .gradient {
   background: rgb(0, 0, 0);
-  background: linear-gradient(15deg, rgba(0, 0, 0, 1) 31%, rgba(25, 24, 24, 1) 59%, rgba(64, 63, 63, 1) 100%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(
+    15deg,
+    rgba(0, 0, 0, 1) 31%,
+    rgba(25, 24, 24, 1) 59%,
+    rgba(64, 63, 63, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 body {
@@ -158,7 +176,13 @@ body {
 }
 .gradient2 {
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 19%, rgba(10, 10, 10, 1) 29%, rgba(10, 10, 10, 1) 33%, rgba(214, 185, 77, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 19%,
+    rgba(10, 10, 10, 1) 29%,
+    rgba(10, 10, 10, 1) 33%,
+    rgba(214, 185, 77, 1) 100%
+  );
 }
 body {
   margin: 0;
@@ -349,4 +373,41 @@ img.object-fit-cover {
 
 #playPauseBtn:hover {
   box-shadow: 1px 1px 20px #1bd760;
+}
+
+/* balde scrolle list */
+
+.scrollable-list {
+  max-height: 700px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Per Firefox */
+  -ms-overflow-style: none; /* Per Internet Explorer e Edge */
+}
+.scrollable-list::-webkit-scrollbar {
+  display: none; /* Per Chrome, Safari e Opera */
+}
+/* Mostra la scrollbar quando si passa sopra il container */
+.scrollable-list-container:hover .scrollable-list {
+  scrollbar-width: auto; /* Per Firefox */
+}
+/* Stile per la scrollbar */
+.scrollable-list::-webkit-scrollbar {
+  display: block; /* Mostra la scrollbar */
+  width: 12px; /* Larghezza della scrollbar */
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: black; /* Colore del track della scrollbar */
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #555; /* Colore del thumb della scrollbar */
+}
+
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+  background: #a29f9f; /* Colore del thumb quando si passa sopra */
+}
+
+#hrLeft {
+  margin-right: 10px;
 }
