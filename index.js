@@ -141,14 +141,14 @@ const displayAlbum = () => {
       buonaseraCard.classList.add("col-4");
       buonaseraCard.innerHTML = `<div class="card m-0 rounded-1 bg-main-cards  mb-3  ">
                       <div class="row g-0">
-                        <div class="col-3">
+                        <div class="col-12 col-md-3">
                           <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><img src="${albums[i].album.cover_medium}" class="img-fluid rounded-start object-fit-cover" alt="" /></a>
                         </div>
-                        <div class="col-9">
+                        <div class="col-12 col-md-9">
                           <div class="card-body">
-                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6  text-truncate">${albums[i].album.title}</p></a>
-                            <p class="card-text lead fs-6">
-                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white">${albums[i].artist.name}.</small></a>
+                            <a class="text-decoration-none text-white" href="./album.html?albumId=${albums[i].album.id}"><p class="card-text text-white fs-6 text-truncate">${albums[i].album.title}</p></a>
+                            <p class="card-text lead fs-6 text-truncate">
+                             <a class="text-decoration-none text-white" href="./artist-page.html?artistId=${albums[i].artist.id}"><small class="text-white ">${albums[i].artist.name}.</small></a>
                             </p>
                           </div>
                         </div>
@@ -163,7 +163,7 @@ const displayAlbum = () => {
   if (isCreateAltro === 0) {
     for (let i = 7; i < 11; i++) {
       const altroCard = document.createElement("div");
-      altroCard.classList.add("col-3");
+      altroCard.classList.add("col-12", "col-sm-3");
       altroCard.innerHTML = `<div class="card rounded-1  bg-secondary-cards text-white border-0 " id="cardAltro">
       <div id="containerAltroImg">
       <a class="text-decoration-none text-white " href="./album.html?albumId=${albums[i].album.id}"> <img src="${albums[i].album.cover_medium}" class="p-3 card-img-top object-fit-cover rounded img-fluid" alt="..." /></a>
