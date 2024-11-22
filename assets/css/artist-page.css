@@ -117,3 +117,37 @@ footer li a:hover {
     font-size: 4rem;
   }
 }
+.scrollable-list {
+  max-height: 700px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollable-list::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-list-container:hover .scrollable-list {
+  scrollbar-width: auto;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  display: block;
+  width: 12px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background: black;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+  background: #a29f9f;
+}
+
+#hrLeft {
+  margin-right: 10px;
+}
