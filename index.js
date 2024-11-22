@@ -1,3 +1,6 @@
+import { extractColor } from './canvas.js';
+
+
 // Fetch albums when the page loads
 window.addEventListener("DOMContentLoaded", (event) => {
   fetchAllAlbums();
@@ -59,6 +62,8 @@ const fetchAllAlbums = () => {
   });
 };
 
+
+
 // Function to display an album
 const displayAlbum = () => {
   // Clear previous content
@@ -72,13 +77,13 @@ const displayAlbum = () => {
   const album = albums[currentAlbumIndex];
 
   const albumCard = document.createElement("div");
-  albumCard.classList.add("card", "mb-3", "rounded-0", "border-0", "text-white", "w-100", "gradient");
+  albumCard.classList.add("card", "mb-3", "rounded-0", "border-0", "text-white", "w-100", /* "gradient" */);
   albumCard.setAttribute("id", "album-card");
 
   albumCard.innerHTML = `
     <div class="row g-0 justify-content-between">
       <div class="col-3 p-2">
-        <img src="${album.album.cover_medium}" class="img-fluid my-3 mx-2" alt="${album.album.title}" />
+        <img id="Cover" src="${album.album.cover_medium}" class="img-fluid my-3 mx-2" alt="${album.album.title}" />
       </div>
       <div class="col-md-9">
         <div class="card-body">
@@ -104,6 +109,15 @@ const displayAlbum = () => {
 
   albumsContainer.appendChild(albumCard);
 
+
+
+const albumCover = document.getElementById("Cover");
+albumCover.setAttribute("crossorigin", "anonymous");
+
+
+  albumCover.addEventListener("load", () => {
+    extractColor(); 
+  });
   // Manage the Play button
   const playButton = document.querySelector(".play-btn");
   playButton.addEventListener("click", () => {
